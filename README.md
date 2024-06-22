@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basically, React, fastAPI and mysql. Hopefully, I will add ML component and bind them together.
+
 
 ## Available Scripts
 
