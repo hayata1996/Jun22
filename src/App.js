@@ -21,10 +21,13 @@ const App = () => {
   };
 
   
-
+//after randering the component, fetch the transactions
   useEffect(() => {
     fetchTransactions();
   }, []);
+//if you take this ', []' out, it will run the fetchTransactions() infinitely, again and again and again....
+
+
 
   const handleInputChange = (event) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
@@ -103,6 +106,7 @@ const App = () => {
         <table className='table table-striped table-bordered table-hover'>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Amount</th>
             <th>Category</th>
             <th>Description</th>
@@ -113,6 +117,7 @@ const App = () => {
         <tbody>
           {transactions.map((transaction) => (
             <tr key={transaction.id}>
+              <td>{transaction.id}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.category}</td>
               <td>{transaction.description}</td>
@@ -124,7 +129,7 @@ const App = () => {
         </table>
       </div>
     </div>
-   )
+  )
   }
 
 export default App;
